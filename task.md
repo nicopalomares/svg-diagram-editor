@@ -8,12 +8,13 @@ This task covers a limited subset of the reference app. Every behavior below has
 
 ## Status of this spec
 
-Every criterion has been confirmed against the screen recording of the reference app (`reference/recording.mp4`).
+Every criterion has been confirmed against the screen recordings of the reference app (`reference/screenshots/VideoReference1.mov` and `reference/screenshots/VideoReference2.mov`).
 
 ## Reference material
 
-- `reference/recording.mp4`: screen recording of the reference app
-- `reference/screenshots/`: key frames (shape creation, arrow binding, multi-selection, zoom indicator)
+- `reference/screenshots/VideoReference1.mov`: screen recording of the reference app
+- `reference/screenshots/VideoReference2.mov`: screen recording of the reference app
+- `reference/screenshots/`: folder that holds the recordings above (and any key frames)
 
 ## Scope
 
