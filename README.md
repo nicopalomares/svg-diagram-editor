@@ -4,6 +4,8 @@
 
 <h1 align="center">SVG Diagram Editor</h1>
 
+**Live demo: [drawtest-alpha.vercel.app](https://drawtest-alpha.vercel.app/)**
+
 A small diagram editor inspired by [Excalidraw](https://excalidraw.com), rendered with plain SVG and no diagramming libraries. Draw rectangles and ellipses, connect them with arrows, zoom and pan an infinite canvas, undo your mistakes, and export your work.
 
 Excalidraw is used only as a behavioral reference; the implementation is original. The full behavior spec lives in [task.md](task.md).
@@ -41,7 +43,7 @@ npx playwright install chromium
 
 ## Deployment
 
-The app is a static Vite build, so it deploys to [Vercel](https://vercel.com) without any configuration:
+The app is live at [drawtest-alpha.vercel.app](https://drawtest-alpha.vercel.app/). It is a static Vite build, so it deploys to [Vercel](https://vercel.com) without any configuration:
 
 1. Push the repository to GitHub.
 2. In Vercel, choose **Add New → Project** and import the repository.
