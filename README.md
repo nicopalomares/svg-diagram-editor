@@ -1,4 +1,8 @@
-# Draw
+<p align="center">
+  <img src="public/logo.svg" alt="Draw test logo" width="96" />
+</p>
+
+<h1 align="center">Draw test</h1>
 
 A small diagram editor inspired by [Excalidraw](https://excalidraw.com), rendered with plain SVG and no diagramming libraries. Draw rectangles and ellipses, connect them with arrows, zoom and pan an infinite canvas, undo your mistakes, and export your work.
 
