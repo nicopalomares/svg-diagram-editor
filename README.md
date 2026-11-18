@@ -35,6 +35,16 @@ The first time you run the tests, install the browser:
 npx playwright install chromium
 ```
 
+## Deployment
+
+The app is a static Vite build, so it deploys to [Vercel](https://vercel.com) without any configuration:
+
+1. Push the repository to GitHub.
+2. In Vercel, choose **Add New → Project** and import the repository.
+3. Keep the detected settings: framework **Vite**, build command `npm run build`, output directory `dist`.
+
+There are no environment variables and no backend. Every push to `main` is deployed automatically.
+
 ## Controls
 
 | Action | Input |
