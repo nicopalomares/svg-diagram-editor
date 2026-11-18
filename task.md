@@ -81,7 +81,7 @@ An arrow's **start** is attached to the shape it begins in. Its **end** is attac
 
 ### B6: Delete
 - **B6.1** Pressing Delete or Backspace removes all selected elements.
-- **B6.2** Elements that were not selected are not affected (except arrows unbinding, see B3.4).
+- **B6.2** Elements that were not selected are not affected (except arrows staying in place, see B3.7).
 
 ### B7: Undo and redo
 - **B7.1** Ctrl + Z undoes the last action (create, move, delete, connect).
