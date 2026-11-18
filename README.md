@@ -27,13 +27,6 @@ npm run dev        # http://localhost:5173
 |--------|--------------|
 | `npm run dev` | Start the Vite dev server |
 | `npm run build` | Type-check and build for production |
-| `npm test` | Run the Playwright test suite |
-
-The first time you run the tests, install the browser:
-
-```bash
-npx playwright install chromium
-```
 
 ## Deployment
 
@@ -109,7 +102,6 @@ src/
 ├── export/                  # PNG, JSON export and JSON import
 ├── hooks/useKeyboard.ts     # Delete, undo/redo, Space
 └── ui/                      # Toolbar, FileMenu, ZoomIndicator
-tests/                       # one spec file per behavior, B1 to B8
 ```
 
 ### Data model
@@ -139,17 +131,20 @@ History keeps snapshots of the elements array. Because the scene is treated as i
 
 ## Testing
 
-All behaviors are covered by Playwright tests in [tests/](tests/), with one spec file per behavior (B1 to B8). The tests drive the real UI with the mouse and keyboard, and assert exact values instead of pixels.
+The Playwright test suite (one spec file per behavior, B1 to B8) lives in the `tests` branch, so `main` stays minimal for deployment:
 
-For deterministic checks the app exposes:
+```bash
+git checkout tests
+npm install
+npx playwright install chromium
+npm test
+```
+
+The app itself keeps the hooks the tests rely on, so they work against `main` too:
 
 - `<svg data-testid="canvas">`, and for each element `<g data-testid="element-<id>">` with `data-type`, `data-x`, `data-y`, `data-width`, `data-height`.
 - `window.__scene`: a live, read-only view of `elements`, `selection`, `tool`, `zoom`, and `scroll`.
 - Toolbar buttons: `tool-select`, `tool-rectangle`, `tool-ellipse`, `tool-arrow`. File buttons: `export-json`, `export-png`, `import-json`. Zoom label: `zoom-indicator`.
-
-```bash
-npm test
-```
 
 ## Out of scope
 
@@ -157,4 +152,4 @@ Freehand drawing, text, diamonds and lines, images, styling (stroke, fill, opaci
 
 ## Stack
 
-React 19, TypeScript, Vite 6, Playwright. No state-management or diagramming libraries.
+React 19, TypeScript, Vite 6 (Playwright on the `tests` branch). No state-management or diagramming libraries.
