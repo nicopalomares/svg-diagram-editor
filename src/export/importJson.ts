@@ -1,7 +1,7 @@
 import { commit } from '../store/history'
 import { setState } from '../store/sceneStore'
 import type { Element } from '../types'
-import { FILE_TYPE } from './exportJson'
+import { FILE_TYPE, LEGACY_FILE_TYPE } from './exportJson'
 
 const num = (v: unknown) => typeof v === 'number' && Number.isFinite(v)
 const point = (p: any) => p && num(p.x) && num(p.y)
@@ -17,7 +17,7 @@ function isElement(e: any): e is Element {
 export function parseScene(text: string): Element[] | null {
   try {
     const data = JSON.parse(text)
-    if (data?.type !== FILE_TYPE || !Array.isArray(data.elements)) return null
+    if ((data?.type !== FILE_TYPE && data?.type !== LEGACY_FILE_TYPE) || !Array.isArray(data.elements)) return null
     return data.elements.every(isElement) ? data.elements : null
   } catch {
     return null

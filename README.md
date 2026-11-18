@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="public/logo.svg" alt="Draw test logo" width="96" />
+  <img src="public/logo.svg" alt="SVG Diagram Editor logo" width="96" />
 </p>
 
-<h1 align="center">Draw test</h1>
+<h1 align="center">SVG Diagram Editor</h1>
 
 A small diagram editor inspired by [Excalidraw](https://excalidraw.com), rendered with plain SVG and no diagramming libraries. Draw rectangles and ellipses, connect them with arrows, zoom and pan an infinite canvas, undo your mistakes, and export your work.
 
@@ -130,7 +130,7 @@ History keeps snapshots of the elements array. Because the scene is treated as i
 
 ### Export
 
-- **JSON:** `{ "type": "draw-test", "version": 1, "elements": [...] }`. Import validates every element before replacing the scene, and the import itself can be undone.
+- **JSON:** `{ "type": "svg-diagram-editor", "version": 1, "elements": [...] }`. Import validates every element before replacing the scene, and the import itself can be undone.
 - **PNG:** the elements are rendered to a standalone SVG with a white background, sized to the drawing's bounding box plus 20 units of padding, then rasterized at 2x through a canvas.
 
 ## Testing
